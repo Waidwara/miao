@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+
+
+ul{
+  list-style:none;
+}
+
+li{
+  text-align:center;
+  background-color: #ccc;
+  position:relative;
+}
+.menu > ul > li{
+  display:inline-block;
+  width:120px;
+  height:25px;
+  line-height:25px;
+  vertical-align:top;
+}
+.menu > ul ul{
+  width:100%;
+  top:100%;
+  visibility:hidden;
+  position:absolute;
+}
+
+.menu li:hover > ul,.menu li:hover ul ul::before {
+  visibility:visible;
+  
+}
+
+.menu li:hover{
+  background-color: red;
+}
+
+.menu ul ul ul{
+  position:absolute;
+  top:0;
+  left:100%;
+}
+.menu ul ul ul::before{
+  content:'>';
+  position:absolute;
+  top:0;
+  right:100%;
+}
+</style>
+<body>
+<div class="menu">
+<ul>
+  <li>身高
+      <ul>
+        <li>180</li>
+        <li>175</li>
+        <li>170
+            <ul>
+              <li>合格</li>
+              <li>不合格</li>
+            </ul>
+        </li>
+      </ul>
+  </li>
+  <li>体重
+     <ul>
+       <li>60kg</li>
+       <li>70kg</li>
+       <li>80kg</li>
+     </ul>
+  </li>
+  <li>性格
+      <ul>
+        <li>温柔
+            <ul>
+              <li>满意</li>
+              <li>不满意</li>
+            </ul>
+        </li>
+        <li>好动</li>
+        <li>鲁莽</li>
+      </ul>
+  </li>
+</ul>
+</div>
+</body>
+</html>
