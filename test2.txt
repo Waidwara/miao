@@ -1,0 +1,335 @@
+大喵教育前端培训
+================
+
+## 阶段性测试 2018.12.07
+
+### 大喵教育版权所有 | 出题人：谢然
+
+
+01. 用文字描述如下选择器将选择哪些（个）元素
+    ```css
+    div, h1 {}  选中div和h1元素
+    div[class] [id="abc"] {} 选中div中id叫abc的元素
+    div:hover ul li > div {} 选中div里的ul的li的所有div元素
+    body :active {} body元素及其子元素 
+    div:hover::after {} 选中div里after伪类元素
+    ::selection {} 选中用户当前选中的元素
+    :target {} 选中文档中特定“id”
+    input + ul + p ~ span {} 选择与input相邻的ul又与该ul相邻的p后所有兄弟元素span
+    ```
+
+02. 分别写出如下几个选择器的优先级
+    ```css
+    * * * {}
+    div * span {}
+    div[title] {}
+    fieldset legend + input {}
+    #some #thing .not:hover .abc:hover {}
+    ```
+
+03. https://www.example.com/a/b/ 页面中有如下代码
+    ```html
+    <link rel="stylesheet" href="//test.example.com/path/../the/../path/c.css">
+    ```
+    请问最终引入的c.css的完整路径是什么？
+    https://www.example.com/a/b///test.example.com/path/../the/../path/c.css
+04. `em,px,rem,vw,vh` 分别代表多长？
+     1em=16px;
+     1px=1/dpi
+     rem=px/font-size
+     1vw=视窗宽度的1%
+     1vh=视窗高度的1%
+05. 显示器的物理分辨率为 `1920x1080`，操作系统设置的分辨率为 `1280x720`，网页的放大倍数为 `110%`，请计算一个 CSS 像素对应多少个显示器物理像素（面积与长度）？
+06. 写出如下代码显示在浏览器后**每个单词**的字号
+    ```html
+    <style>
+      html {
+        font-size: 20px;
+      }
+      section {
+        font-size: 10rem;
+      }
+      p {
+        font-size: 24px;
+      }
+      span {
+        font-size: 150%;
+      }
+      .sucks {
+        font-size: inherit;
+      }
+    </style>
+    <body>
+      <section>
+        <h2>Brown</h2>
+        <p>quick</p>
+        <p>jumps <span>over <span>lazy</span> dog</span></p>
+        <p class="sucks">sucks</p>
+      </section>
+    </body>
+    ```
+    quick 和jumps 是24px 
+    over和dog是36px
+    lazy是54px
+    sucks和Brown是200px
+
+
+07. 字体的 italic 与 obsolete 的区别是？
+    obsolete是正常字体倾斜得到的，而italic是专门设计出来的斜体字体。
+    
+08. 写出满足如下条件的选择器
+    * 第  8个子结点之后，倒数第 5 个子结点之前的li结点
+    * 【类名】以“damiao-”开头的元素
+    * rel 属性中有 nofollow 这个单词的标签
+
+    .damiao- a li:nth-child(n + 8)：nth-child(-n + 5)
+09. 链接伪类的几种状态书写的顺序是什么？为什么？
+10. 如下 font 属性的值哪一个是书写正确的？
+    * font: serif 24px;
+    * font: serif bold 24px/1.2;
+    * font: bold 24px/1.2 serif;
+    font: bold 24px/1.2 serif;
+11. vertical-align 取 middle 时元素如何对齐？
+元素在放置在父元素中部，即垂直居中
+     
+12. 什么是 baseline？
+    基线
+     
+13. 详述你对盒模型的理解。
+    盒模型是由content padding border margin组成的
+14. 如何让一个元素可被 focus？如何去掉其被 focus 时的虚框？
+    给该元素设置tabindex,且其值等于-1。
+    在css里加入 outline:none;
+15. 如何给css添加注释
+    加/*内容*/
+16. 指出如下css代码中的错误
+    ```
+    p,h1,{
+        
+        background-color: rgba:(abc)
+        font-varient; abc;
+        colr: #ff048;
+        font: "serif" 25px;
+    }
+    ```
+    h1不应该有,
+    background-color: rgba:(abc)后少了";"且rgba的()里应该填入相应的数字
+    font-varient应改为font-variant
+    colr应改为color
+    serif应该去掉双引号
+
+17. 元素的高度写百分比在什么情况下【无效】，为什么？在什么情况下【有效】，有效时是以哪个元素的高度为基准值？
+
+   其父元素的高度为未确定，百分比是继承父元素的高度。
+   1.父元素height的值确定时可以
+   2.元素的position为absolute时也可以有效
+   3.元素的position为fixed时也可以有效
+   优先级：3>2>1
+18. 解释 box-sizing 可以取哪些值，以及每个值的意义
+   取值：
+   1.content-box 用来确定内容框的宽高，在高度和宽度之外绘制元素的内边距和边框
+   2.border-box 设置的宽高时包含边框的宽度，除去边框和内边距才是内容的高度和宽度
+   3.inherit 从父元素继承box-sizing属性的值
+19. 如下结构中，div 有两个伪元素，分别标出伪元素的位置，用 `<before></before>` 表示 `::before` 伪元素，用 `<after></after>` 表示 `::after` 伪元素
+    ```html
+    <div>
+      <before><h1>The article</h1></before>
+      <after><p>the quick brown fox</p></after>
+    </div>
+    ```
+
+20. 如何在伪元素中插入换行符？如何让这个换行符在页面中生效？
+    在伪元素的content中加入'\000A'或者'\A'
+    在需要换行的位置加入"\A",之后该伪元素中加入white-space：pre;
+    
+21. 简述 ie7 市场份额比 ie6 低的原因并在网络上找出目前各大浏览器在中国和全球的市场份额
+22. 页面有无 `doctype` 声明会有什么区别？
+    确保浏览器能够预先知道文档类型,不加的话会无法识别输入的元素和属性被正确识别。
+23. 有一张高为 100 宽为 50 的图片，内有一个直径为 40 的圆，其做为一个 200x200 的元素的背景图片，background-size 为 contain 和 cover 时，圆的直径分别为多少？
+ 80 和 40
+
+24. 写出实现小米网首页 logo 返回主页的动画效果的代码。
+25. 给出至少 5 种水平垂直居中方案。
+26. 简述 em 框，内容区，行内框，行框的构成以及其需要注意的问题。
+    em框：em框在字体中定义，也称字符框。注意：实际的字形可能比其em框更高或者更矮。
+    内容区：元素中各种字符的em框串在一起构成的框。注意：在替换元素中，内容区就是元素的固有高度再加上可能有的外边距、边框或内边框。
+    行内框：这个框通过向内容区增加行间距来描述。注意：对于非替换元素，行内框的高度等于line-height的值。对于替换元素，元素行内框的高度则恰好等于内容区的高度因为行间距不应用到替换元素。
+    行框：这是包含该行中出现的行内框的最高点和最低点的最小框。注意：行框的上边界要位于最高行内框的上边界，而行框的底边要放在行内框的下边界。
+27. 如何确定一个行内框的baseline及其最高点和最低点？
+28. `td` 元素的 `headers` 属性是干嘛的？
+    属性规定与表格单元格相关联的一个或多个表头单元格
+
+29. color 这个属性有什么需要注意的地方？
+    
+30. 如何理解 inline-block 元素？它有什么需要注意的地方？
+    就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。
+
+
+31. 什么是 CSS Sprite？为什么要使用 CSS Sprite？它有哪些优缺点？
+    CSSSprites在国内很多人叫css精灵，是一种网页图片应用处理方式。
+    它允许你将一个页面涉及到的所有零星图片都包含到一张大图中去，这样一来，当访问该页面时，载入的图片就不会像以前那样一幅一幅地慢慢显示出来了.
+    优点：
+    1.利用CSS Sprites能很好地减少网页的http请求，从而大大的提高页面的性能，这也是CSS Sprites最大的优点，也是其被广泛传播和应用的主要原因；
+    2.CSS Sprites能减少图片的字节，曾经比较过多次3张图片合并成1张图片的字节总是小于这3张图片的字节总和。
+    3.解决了网页设计师在图片命名上的困扰，只需对一张集合的图片上命名就可以了，不需要对每一个小元素进行命名，从而提高了网页的制作效率。
+    4.更换风格方便，只需要在一张或少张图片上修改图片的颜色或样式，整个网页的风格就可以改变。维护起来更加方便。
+    缺点：
+    1.在图片合并的时候，你要把多张图片有序的合理的合并成一张图片，还要留好足够的空间，防止板块内出现不必要的背景；这些还好，最痛苦的是在宽屏，高分辨率的屏幕下的自适应页面，你的图片如果不够宽，很容易出现背景断裂；
+    2.CSS Sprites在开发的时候比较麻烦，你要通过photoshop或其他工具测量计算每一个背景单元的精确位置，这是针线活，没什么难度，但是很繁琐；
+    3.CSS Sprites在维护的时候比较麻烦，如果页面背景有少许改动，一般就要改这张合并的图片，无需改的地方最好不要动，这样避免改动更多的css，如果在原来的地方放不下，又只能（最好）往下加图片，这样图片的字节就增加了，还要改动css。
+32. 找出如下代码中的错误
+    ```
+    <style>
+      div::after：hover {
+        opacity: 85%；
+        transition: opactiy .3s step(5,end);
+      }
+      a:visited {
+        font-size: 28px;
+      }
+    </style>
+    <div>
+      <a href="jd.com”>京东商场<a>
+      <a href="mi.com”>小米网<a>
+    </div>
+    ```
+    1. div::after：hover  改为 div：hover::after 
+    2. opacity: 85%；改为  opacity: 85%;
+33. 如下内容渲染在【同一行】中，请计算那一行的理论行高
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>JS Bin</title>
+      <style>
+        div {
+          margin: 80px;
+          background-color: violet;
+        }
+        span {
+          display: inline-block;
+          border: 1px dotted;
+          background-color: pink;
+        }
+
+        .a {
+          vertical-align: -15px;
+          width: 30px;
+          height: 30px;
+        }
+        .b {
+          margin-top: -50px;
+          width: 30px;
+          height: 30px;
+          vertical-align: top;
+        }
+        .c {
+          margin-bottom: 10px;
+          vertical-align: middle;
+        }
+        .d {
+          width: 30px;
+          height: 30px;
+        }
+      </style>
+    </head>
+    <body>
+      <div>
+        x<span class="a">foo</span>
+        <span class="b">bar</span>
+        <span class="c">baz</span>
+        <span class="d"></span>
+      </div>
+    </body>
+    </html>
+    ```
+
+34. `vertical-align` 取值为 `baseline` 时在不同情况下分别是如何对齐的？
+35. 解释常规流与包含块的概念
+    常规流是指西方语言文本从左向右、从上向下显示。
+    包含块是每个元素都相对于其包含块摆放，即一个元素的"布局上下文"
+36. 在各种情况下，一个元素的包含块分别是什么？
+    
+37. 默写与背景相关的属性并说明每个属性的作用和会产生的效果
+    
+38. 如何实现单方向的盒子阴影？
+39. 默写与表格布局相关的 CSS 属性，并说明相关属性的作用
+40. `visibility:hidden`，`display:none`，`opacity:0`分别有什么不同？
+41. 当页面中出现表示时间的文字但表意不明确时，比较优雅且富有语义的做法是什么？
+42. CSS 中一般为何不使用 `cm`，`mm` 等长度单位？
+    cm mm这两个单位是绝对单位，即便在设置长度为3cm，但是在不同分辨率下长度又会发生改变。
+43. 表格布局中各层的层次是？
+    单元格 行 行组 列 列组 表 上一层会覆盖下一层
+44. 为什么要在文件的最后一行加一个回车？
+    
+45. 用 CSS 画出一个半圆形，分别给出实心与空心的的画法。实心和空心分别给出两种方案。
+    
+
+46. 表单元素有哪些伪类选择器？
+ :input //匹配所有input textare select button 元素
+ :text  //匹配所有单行文本框
+ :password //匹配所有密码框
+ ：radio //匹配所有单选按钮
+ :checkbox  //匹配所有复选框
+ :submit //匹配所有提交按钮
+ :image //匹配所有图像域
+ :reset //匹配所有重置按钮
+ :button //匹配所有按钮
+ :file //匹配所有文件域
+ ：hidden //匹配所有不可见元素
+47. 如何禁用 textarea 元素默认的可缩放行为？
+    在该元素css中加入resize：none;
+48. reset与normalize分别是什么，区别是什么，何种场景会使用到？
+    reset 重置默认样式
+    normalize 是在不同浏览器上进行的一般化。
+    区别：Reset通过为几乎所有的元素施加默认样式，强行使得元素有相同的视觉效果。相比之下，Normalize.css保持了许多默认的浏览器样式。这就意味着你不用再为所有的公共排版元素重新设置样式。当一个元素在不同的浏览器中有不同的默认值时，Normalize.css会力求让这些样式保持一致并可能与现代标准相符合。
+    要在为不同浏览器展示相同的页面而使用到。
+49. 表布局中边框合并的原则是什么？
+    1.如果某个合并边框的border-style为hidden,它会优先于所有其他合并边框。这个位置上的所有边框都隐藏。
+    2.如果某个合并边框的border-style为none，它的优先级最低。这个位置上不会画出把边框，除非所有合并边框的border-style值都是none.
+    3.既不是1的情况也不是2的情况，那么窄边框的会被宽边框所覆盖。宽度相同时，又会根据边框样式来分优先级。
+    4.如果合并边框样式和宽度都一样，但是颜色不一样，就会按照cell,row, row group,column.column group,table顺序来使用元素的颜色。如果合并边框来自相同类型的元素，则颜色取嘴上嘴最左边框的颜色。
+50. 如何让背景图片从元素的左下角向上偏移5像素，往右偏移3像素；图片不重复平铺？写出代码。
+     
+51. 写出创建如下目录结果的命令行脚本（注：有扩展名的为文件，没有扩展名的为文件夹）。
+    ```
+    a
+    │  readme.md
+    │
+    ├─foo
+    │  └─c
+    └─bar
+        │  a.txt
+        │  b.txt
+        │
+        └─y
+                a.js
+    ```
+
+52. 中英互翻
+
+    omit，multiple，驼峰式，中划线式，layout，typo，code review，半径，config，集合，矩形，binary，decimal，十六进制，八进制，SEO，HTML实体，语义化，兼容性，quirk，reference，大小写敏感，别名
+
+    omit 删除
+    multiple 多样的
+    驼峰式 camel
+    中划线式
+    layout 布局
+    typo 输入错误
+    code review 代码检查
+    半径 radius
+    config 显示配置信息命令
+    集合 collection
+    矩形 rectangle
+    binary 二进制
+    decimal 十进制
+    十六进制 hexadecimal
+    八进制  octonary
+    SEO 搜索引擎优化
+    HTML实体 
+    语义化 semantic
+    兼容性 compatibility
+    uirk
+    reference 引用，参考
