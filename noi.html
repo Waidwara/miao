@@ -1,0 +1,200 @@
+<script id="ch0103/01" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+console.log(a+b);
+
+
+</script>
+
+<script id="ch0103/02" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+console.log((a+b)*c);
+
+
+</script>
+
+<script id="ch0103/03" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+console.log(parseInt((a+b)/c));
+
+
+</script>
+
+<script id="ch0103/04" type="qwe">
+
+var a=+prompt('')
+var b=+prompt('')
+var x=parseInt(a/b)
+var y=a%b
+console.log(x,y);
+
+</script>
+
+<script id="ch0103/05" type="qwe">
+
+var a=+prompt('')
+var b=+prompt('')
+var x=a/b
+console.log(x.toFixed(9));
+
+</script>
+
+<script id="ch0103/06" type="qwe">
+
+var a=+prompt('请输入确诊数：')
+var b=+prompt('请输入死亡数：')
+var x=b/a*100
+console.log("死亡率："+x.toFixed(3)+"%");
+
+</script>
+
+<script id="ch0103/07" type="qwe">
+
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+var d=+prompt('')
+var x=+prompt('')
+var f=a*x*x*x+b*x*x+c*x+d
+console.log(f);
+
+</script>
+
+<script id="ch0103/08" type="qwe">
+
+var f=+prompt('请输入华氏温度：')
+if(f < -459.67){
+    console.log(NaN);
+}
+else{
+var c=5*(f-32)/9
+console.log("摄氏温度："+c.toFixed(5));
+}
+</script>
+
+<script id="ch0103/09" type="qwe">
+
+var r=+prompt('')
+if(r < 0 || r>10000){
+    console.log(NaN);
+}
+else{
+    var pi=3.14159
+    var D=2*r
+    var L=2*pi*r
+    var S=pi*r*r
+    console.log(D.toFixed(4),L.toFixed(4),S.toFixed(4));
+}
+</script>
+
+<script id="ch0103/10" type="qwe">
+var r1=+prompt('')
+var r2=+prompt('')
+var R=1/(1/r1+1/r2)
+console.log(R.toFixed(2));
+
+</script>
+
+<script id="ch0103/11" type="qwe">
+
+var a=+prompt('')
+var b=+prompt('')
+var r=a%b
+console.log(r.toFixed(4));
+</script>
+
+<script id="ch0103/12" type="qwe">
+var r=prompt('')
+var π=3.14
+if(r<0||r>100){
+    console.log(NaN)
+}
+else{
+    var V=4/3*π*r*r*r
+    console.log(V.toFixed(2))
+}
+</script>
+
+<script id="ch0103/13" type="qwe">
+var n=prompt('')
+console.log(n.split("").reverse().join(""));
+
+</script>
+
+<script id="ch0103/14" type="qwe">
+var h=+prompt('')
+var r=+prompt('')
+var Pi=3.14159
+var V=Pi*r*r*h
+var n=(20000/V)
+console.log(Math.ceil(n));
+</script>
+
+<script id="ch0103/15" type="qwe">
+var n=+prompt('')
+var x=+prompt('')
+var y=+prompt('')
+var z=n-Math.ceil(y/x)
+console.log(z);
+
+</script>
+
+<script id="ch0103/16" type="qwe">
+var Xa=+prompt('')
+var Ya=+prompt('')
+var Xb=+prompt('')
+var Yb=+prompt('')
+var L=Math.sqrt((Xb-Xa)*(Xb-Xa)+(Yb-Ya)*(Yb-Ya))
+console.log(L.toFixed(3));
+
+
+</script>
+
+<script id="ch0103/17" type="qwe">
+var x1=+prompt('')
+var y1=+prompt('')
+var x2=+prompt('')
+var y2=+prompt('')
+var x3=+prompt('')
+var y3=+prompt('')
+var a=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2))
+var b=Math.sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2))
+var c=Math.sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3))
+var s=(a+b+c)/2
+var A=Math.sqrt(s*(s-a)*(s-b)*(s-c))
+console.log(A.toFixed(2));
+</script>
+
+<script id="ch0103/18" type="qwe">
+var a1=+prompt('')
+var a2=+prompt('')
+var n=+prompt('')
+if(a1<=-100||a2>=100||0>n||n>=1000){
+    console.log(NaN)
+}
+else{
+  var d=a2-a1
+var an=a1+(n-1)*d
+console.log(an)  
+}
+</script>
+
+
+<script id="ch0103/19" type="qwe">
+var A=+prompt('请输入正整数A：')
+var B=+prompt('请输入正整数B：')
+var z=A*B
+console.log(z)
+</script>
+
+<script id="ch0103/20" type="qwe">
+var n=+prompt('')
+var result=1
+for(var count=0;count<n;count++)
+   result=result*2
+   console.log(result);
+</script>
