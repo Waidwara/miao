@@ -59,7 +59,7 @@ var b=+prompt('')
 var c=+prompt('')
 var d=+prompt('')
 var x=+prompt('')
-var f=a*x*x*x+b*x*x+c*x+d
+var f=a*(x*x*x)+b*(x*x)+c*x+d
 console.log(f.toFixed(7));
 
 </script>
@@ -197,4 +197,350 @@ var result=1
 for(var count=0;count<n;count++)
    result=result*2
    console.log(result);
+</script>
+
+
+<script id="ch0104/01" type="qwe">
+var x=+prompt('')
+if (x<0){
+   console.log("negative");
+}
+else if(x==0){
+    console.log("zero")
+}
+else{
+    console.log("positive")
+}
+</script>
+
+<script id="ch0104/02" type="qwe">
+var x=+prompt('')
+if(x>=0){
+    console.log(x);
+}
+else{
+    var x=-x
+    console.log(x);
+}
+
+
+
+</script>
+
+<script id="ch0104/03" type="qwe">
+var x=+prompt('')
+if(x%2==0){
+    console.log("even");
+}
+else{
+    console.log("odd")
+}
+
+
+
+</script>
+
+<script id="ch0104/04" type="qwe">
+var x=prompt('')
+var y=x.charCodeAt()
+if(y%2==0){
+    console.log("NO");
+}
+else{
+    console.log("YES")
+}
+
+
+
+</script>
+
+<script id="ch0104/05" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if(x > y){
+    console.log(">")
+}
+else if(x == y){
+    console.log("=")
+}
+else{
+    console.log("<")
+}
+
+</script>
+
+<script id="ch0104/06" type="qwe">
+var x=+prompt('')
+if( x > 9 && x < 100){
+    console.log(1)
+}
+else{
+    console.log(0)
+}
+
+
+</script>
+
+<script id="ch0104/07" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if(x > 9||y > 19){
+    console.log(1)
+}
+else{
+    console.log(0)
+}
+
+
+</script>
+
+<script id="ch0104/08" type="qwe">
+var x=+prompt('')
+if(x % 3 == 0 && x % 5 ==0){
+    console.log("YES")
+}
+else{
+    console.log("NO")
+}
+
+
+</script>
+
+<script id="ch0104/09" type="qwe">
+var x=+prompt('')
+if(x%3==0&&x%5==0&&x%7==0){
+    console.log(3,5,7)
+}
+else if(x % 3 == 0&& x % 5 == 0&&x % 7 != 0){
+    console.log(3,5)
+}
+else if(x % 3 == 0&& x % 7 == 0&&x % 5 != 0){
+    console.log(3,7)
+}
+else if(x % 5 == 0&& x % 7 == 0&&x % 3 != 0){
+    console.log(5,7)
+}
+else if(x%3==0&&x%5!=0&&x%7!=0){
+    console.log(3)
+}
+else if(x%5==0&&x%3!=0&&x%7!=0){
+    console.log(5)
+}
+else if(x%7==0&&x%3!=0&&x%5!=0){
+    console.log(7)
+}
+else{
+    console.log("n")
+}
+</script>
+
+<script id="ch0104/10" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if(x<60&&(y>60||y==60)){
+    console.log(1)
+}
+else if(y<60&&(x>60||x==60)){
+    console.log(1)
+}
+else{
+    console.log(0)
+}
+
+
+</script>
+
+<script id="ch0104/11" type="qwe">
+var x=+prompt('')
+if(x==3||x==5||x==7){
+    console.log("NO")
+}
+else{
+    console.log("YES")
+}
+
+
+
+</script>
+
+<script id="ch0104/12" type="qwe">
+var x=+prompt('')
+if(x<100){
+    console.log("Walk")
+}
+else if(x==100){
+    console.log("All")
+}
+else{
+    console.log("Bike")
+}
+
+
+
+</script>
+
+<script id="ch0104/13" type="qwe">
+var x=+prompt('')
+if((x>0||x==0)&&x<5){
+    var y=(-x+2.5)
+    console.log(y.toFixed(3))
+}
+else if((x>5||x==5)&&x<7){
+    var y=2-1.5*(x-3)*(x-3)
+    console.log(y.toFixed(3))
+}
+else if((x>10||x==10)&&x<20){
+    var y=x/2-1.5
+    console.log(y.toFixed(3))
+}
+
+</script>
+
+<script id="ch0104/14" type="qwe">
+var x=+prompt('')
+var a=prompt('')
+if(x<1000||x==1000&&a =="n"){
+    console.log(8)
+}
+else if(x<1000||x==1000&&a=="y"){
+    console.log(13)
+}
+else if(x>1000&&a == "n"){
+    var money=Math.ceil((x-1000)/500)*4+8
+    console.log(money)
+}
+else{
+    var money=Math.ceil((x-1000)/500)*4+8+5
+    console.log(money)
+}
+
+</script>
+
+<script id="ch0104/15" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+var z=+prompt('')
+if(x>y&&x>z){
+    console.log(x)
+}
+else if(y>x&&y>z){
+    console.log(y)
+}
+else if(z>y&&z>x){
+    console.log(z)
+}
+
+
+
+</script>
+
+<script id="ch0104/16" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+var ab=a+b
+var ac=a+c
+var bc=b+c
+if(ab>c&&ac>b&&bc>a){
+    console.log("yes")
+}
+else{
+    console.log("no")
+}
+
+
+
+</script>
+
+<script id="ch0104/17" type="qwe">
+var x=+prompt('')
+if(x%400==0||x%4==0&&x%100!=0){
+    console.log("Y")
+}
+else{
+    console.log("N")
+}
+
+
+
+</script>
+
+<script id="ch0104/18" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if((x>-1||x==-1)&&(x<1||x==1)&&(y>-1||y==-1)&&(y<1||y==1)){
+    console.log("yes")
+}
+else{
+    console.log("no")
+}
+
+</script>
+
+<script id="ch0104/19" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+var n=prompt('')
+if(n=="+"){
+    var q=x+y
+    console.log(q)
+}
+else if(n =="-"){
+    var q=x-y
+    console.log(q)
+}
+else if(n=="/"){
+    if(y!=0){
+        var q=x/y
+        console.log(q)
+    }
+    else{
+        console.log("Divided by zero!")
+    }
+}
+else if(n=="*"){
+    var q=x*y
+    console.log(q)
+}
+else{
+    console.log("Invalid operator!")
+}
+
+
+
+</script>
+
+<script id="ch0104/20" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+var d=b*b-4*a*c
+if(d>0){
+    var x1=(-b-Math.sqrt(d))/(2*a)
+    var x2=(-b+Math.sqrt(d))/(2*a)
+    console.log(x1.toFixed(5),x2.toFixed(5))
+}
+else if(d==0){
+    var x1=(-b)/(2*a)
+    var x2=(-b)/(2*a)
+    console.log(x1.toFixed(5),x2.toFixed(5))
+}
+
+else{
+    var N=(-b/2/a)
+    var M=Math.sqrt(-d)/2/a
+    console.log(N.toFixed(5)+"-"+M.toFixed(5)+"i",N.toFixed(5)+"+"+M.toFixed(5)+"i")
+}
+
+
+
+</script>
+
+<script id="ch0104/21" type="qwe">
+var n=+prompt('')
+var x=+prompt('')
+var y=+prompt('')
+var z=n-Math.ceil(y/x)
+console.log(z);
+
 </script>
