@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  for(var i=0;i<=400;i++){
+    dot(i,30,'black')
+}
+
+for(var i=0;i<=400;i=i+2){
+    dot(i,40,'black')
+}
+for(var i=0;i<=400;i=i+4){
+    dot(i,50,'black')
+}
+for(var i=1;i<=400;i=i+4){
+    dot(i,50,'black')
+}
+for(var i=0;i<=400;i=i+5){
+    dot(i,60,'black')
+}
+for(var i=1;i<=400;i=i+5){
+    dot(i,60,'black')
+}
+for(var i=2;i<=400;i=i+5){
+    dot(i,60,'black')
+}
+for(var i=0;i<=400;i=i+1){
+    dot(i,i,'black')
+}
+for(var i=0;i<=400;i=i+1){
+    dot(i,3*i/4,'black')
+}
+for(var i=60;i<=100;i++){
+    dot(i,70,'black')
+}
+for(var i=60;i<=100;i++){
+    dot(i,100,'black')
+}
+for(var i=70;i<=100;i++){
+    dot(60,i,'black')
+}
+for(var i=70;i<=100;i++){
+    dot(100,i,'black')
+}
+for(var j=110;j<=140;j++){
+    for(var i=60;i<=100;i++){
+        dot(i,j,'black')
+    }
+}
+
+var r;
+	  var g = 0;
+	  for (let x = 130; x <= 181; x++) {
+	    r = 0;
+	    for (let y = 200; y <= 251; y++) {
+	      dot(x, y, "rgb(" + r + "," + g + ",255)")
+	      r += 4;
+	    }
+	    g += 4;
+	  }
+var x0=100,y0=100,x,y,r=50
+for(i=0;i<=360;i=i+0.001){
+    var rad=i*Math.PI/180
+    x=x0+r*Math.sin(rad)
+    y=y0+r*Math.cos(rad)
+    dot(x,y,'black')
+}
+  
+</script>
+</html>
