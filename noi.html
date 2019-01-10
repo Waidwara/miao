@@ -887,9 +887,13 @@ console.log(h)
 <script id="ch0105/21" type="qwe">
 var x=+prompt('')
 var i=1
+if(x==1){
+    console.log("End")
+}
+else if(n>1){
 if(x%2!=0){
     var y=x*3+1
-    console.log(''+x+"*"+3+"+"+1+"="+16)
+    console.log(''+x+"*"+3+"+"+1+"="+y)
     while(i < y){
         y=y/2
         z=2*y
@@ -909,7 +913,7 @@ else{
         console.log("End")
     }
 }
-
+}
 
 
 </script>
@@ -1260,4 +1264,283 @@ for(var i=2;i<Math.sqrt(n);i++){
 
 <script id="ch0105/45" type="qwe">
 
+</script>
+
+
+<script id="sort" type="xxx" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+  var a=+prompt('')
+  var b=+prompt('')
+  var c=+prompt('')
+  var max,min,mid
+  if(a>b||a>c){
+      max=a
+      if(b>c){
+          mid=b
+          min=c
+      }
+      else{
+          mid=c
+          min=b
+      }
+  }
+  if(c>b||c>b){
+      max=c
+      if(b>a){
+          mid=b
+          min=a
+      }
+      else{
+          mid=a
+          min=b
+      }
+if(b>a||b>c){
+      max=b
+      if(a>c){
+          mid=a
+          min=c
+      }
+      else{
+          mid=c
+          min=a
+      }
+      console.log(min,mid,max)
+</script>
+
+题目：水仙花数。水仙花数是指一个N位的十进制数，其各位数的N次方的和等于它自己。
+如：153 =　1的三次方+5的三次方+3的三次方，则153就是一个水仙花数
+或：1634 =　1的四次方+6的四次方+3的四次方+4的四次方
+因为1634是一个四位数。
+找出100到100000以内所有的水仙花数。
+<script id="narcissistic " type="xxx" sample-input="153" sample-output="YES" comment="判断一个数是否为水仙花数">
+var width=function (x) {
+    var count=0
+    var digit
+    while(x>0){
+        digit=x%10
+        x=(x-digit)/10
+        count++
+    }
+    return count             
+}
+var i=0
+var n=+prompt('')
+var m=n
+var sum=0
+var result=1
+var b
+while(m>0){
+    b=m%10
+    sum=sum+Math.pow(b,width(n))
+    m=(m-b)/10
+}
+if(sum==n){
+    console.log("YES")
+}
+else{
+    console.log("NO")
+}
+
+
+</script>
+<script id="narcissistics" type="xxx" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+var width=function (x) {
+    var count=0
+    var digit
+    while(x>0){
+        digit=x%10
+        x=(x-digit)/10
+        count++
+    }
+    return count             
+}
+
+for(var i=100;i<10000;i++){
+    var n=i
+    var sum=0
+    while(n>0){
+        b=n%10
+        sum +=Math.pow(b,width(i))
+        n=(n-b)/10
+    }
+    if(sum==i){
+        console.log(i)
+    }
+}  
+</script>
+<script id="palindrom" type="xxx"sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+var Palindrom=function(n){
+    var t=n
+    var sum=0
+    var digit
+    while(t>0){
+        digit=t%10
+        sum=sum*10+digit
+        t=(t-digit)/10        
+    }
+    if(sum==n){
+        console.log("YES")
+    }
+    else{
+        console.log("NO")
+    }
+
+} 
+
+var width=function (x) {
+    var count=0
+    var digit
+    while(x>0){
+        digit=x%10
+        x=(x-digit)/10
+        count++
+    }
+    return count             
+}
+
+function Palindrom(n){
+    var width=width(n)
+    for(var i=1;i<width/2;i++){
+        var leftDigit=Math.floor(n/ Math.pow(10,width - i))%10
+        var rightDigit=Math.floor(n/ Math.pow(10,i-1))%10
+        if(leftDigit!=rightDigit){
+            return false
+        }
+    }
+    return true
+}
+
+</script>
+
+<script id="weekday" type="xxx" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
+function dayOfMonth(year,month){
+    switch (month) {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          return 30
+        case 2:
+          if(isLeapYear(year)){
+              return 29
+          }
+          else {
+              return 28
+          }
+          default:
+          return 31 
+    }  
+}
+var isLeapYear=function(n){
+    if(n%400==0||n%4==0&&n%100!=0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
+function daysBefore(y,m){
+
+var days=0
+for(var year=1;year<y;year++){
+    if(isLeapYear(year)){
+        days +=366
+    }
+    else{
+        days +=365
+    }
+}
+for(var month=1;month<m;month++){
+    days +=dayOfMonth(year,month)
+}
+return (days+1)%7
+}
+//days 是y年m月第一天的前一天的总数
+//(days+1)%7 是y年m月第一天的星期数
+</script>
+<script id="complete-number" type="xxx" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+var n=+prompt('')
+var sum=0
+for(var i=1;i<n;i++){
+    if(n%i==0){
+        sum=sum+i
+    }
+}
+if(sum==n){
+    console.log("YES")
+}
+else{
+    console.log("NO")
+}  
+</script>
+<script id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
+var sum=0
+for(var i=2;i<10000;i++){
+    for(var j=1;j<i;j++){
+        if(i%j==0){
+        sum=sum+j
+        }
+    }
+    if(sum==i){
+    console.log(sum)
+    }
+    sum=0
+}
+void 0;    
+</script>
+<script id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
+var n=+prompt('')
+if(n==2){
+    console.log("YES")
+}
+for(var i=2;i<n;i++){
+    if(n%i==0){
+        console.log("NO")
+        break
+    }
+    else{
+        console.log("YES")
+        break
+    }
+}
+  
+</script>
+<script id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">
+if(n==2){
+    console.log("YES")
+}
+for(n=3;n<10;n++){
+for(var i=2;i<n;i++){
+    if(n%i!=0){
+        console.log(n)
+        break
+    }
+}
+}  
+</script>
+<script id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串，即实现Number函数的功能，不可使用+号或者Number函数">
+  
+</script>
+<script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
+  
+</script>
+
+题目：敲7。输出1到100以内所有7的倍数以及数字中包含7的数，如7（7的倍数），37（不是倍数但数位中包含7）都需要输出，依次类推
+<script id="7" sample-input="" sample-output="" comment="敲7，输出7的倍数或数位中含有7的数如（21，27）">
+  
+</script>
+<script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
+  
+</script>
+
+给定M和N，求从M个物体中选出N个的排列与组合的数量：
+Ｃ（ｍ，ｎ）
+Ａ（ｍ，ｎ）
+<script id="c&a">
+  
+</script>
+
+题目：给定一个数，对其进行四舍五入，如1.4输出1，1.6输出2
+<script id="round">
+  
 </script>

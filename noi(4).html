@@ -1,0 +1,550 @@
+<script id="ch0104/01" type="qwe">
+var x=+prompt('')
+if (x<0){
+   console.log("negative");
+}
+else if(x==0){
+    console.log("zero")
+}
+else{
+    console.log("positive")
+}
+</script>
+
+<script id="ch0104/02" type="qwe">
+var x=+prompt('')
+if(x>=0){
+    console.log(x);
+}
+else{
+    var x=-x
+    console.log(x);
+}
+
+
+
+</script>
+
+<script id="ch0104/03" type="qwe">
+var x=+prompt('')
+if(x%2==0){
+    console.log("even");
+}
+else{
+    console.log("odd")
+}
+
+
+
+</script>
+
+<script id="ch0104/04" type="qwe">
+var x=prompt('')
+var y=x.charCodeAt()
+if(y%2==0){
+    console.log("NO");
+}
+else{
+    console.log("YES")
+}
+
+
+
+</script>
+
+<script id="ch0104/05" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if(x > y){
+    console.log(">")
+}
+else if(x == y){
+    console.log("=")
+}
+else{
+    console.log("<")
+}
+
+</script>
+
+<script id="ch0104/06" type="qwe">
+var x=+prompt('')
+if( x > 9 && x < 100){
+    console.log(1)
+}
+else{
+    console.log(0)
+}
+
+
+</script>
+
+<script id="ch0104/07" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if(x > 9||y > 19){
+    console.log(1)
+}
+else{
+    console.log(0)
+}
+
+
+</script>
+
+<script id="ch0104/08" type="qwe">
+var x=+prompt('')
+if(x % 3 == 0 && x % 5 ==0){
+    console.log("YES")
+}
+else{
+    console.log("NO")
+}
+
+
+</script>
+
+<script id="ch0104/09" type="qwe">
+var x=+prompt('')
+if(x%3==0&&x%5==0&&x%7==0){
+    console.log(3,5,7)
+}
+else if(x % 3 == 0&& x % 5 == 0&&x % 7 != 0){
+    console.log(3,5)
+}
+else if(x % 3 == 0&& x % 7 == 0&&x % 5 != 0){
+    console.log(3,7)
+}
+else if(x % 5 == 0&& x % 7 == 0&&x % 3 != 0){
+    console.log(5,7)
+}
+else if(x%3==0&&x%5!=0&&x%7!=0){
+    console.log(3)
+}
+else if(x%5==0&&x%3!=0&&x%7!=0){
+    console.log(5)
+}
+else if(x%7==0&&x%3!=0&&x%5!=0){
+    console.log(7)
+}
+else{
+    console.log("n")
+}
+</script>
+
+<script id="ch0104/10" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if(x<60&&(y>60||y==60)){
+    console.log(1)
+}
+else if(y<60&&(x>60||x==60)){
+    console.log(1)
+}
+else{
+    console.log(0)
+}
+
+
+</script>
+
+<script id="ch0104/11" type="qwe">
+var x=+prompt('')
+if(x==3||x==5||x==7){
+    console.log("NO")
+}
+else{
+    console.log("YES")
+}
+
+
+
+</script>
+
+<script id="ch0104/12" type="qwe">
+var x=+prompt('')
+if(x<100){
+    console.log("Walk")
+}
+else if(x==100){
+    console.log("All")
+}
+else{
+    console.log("Bike")
+}
+
+
+
+</script>
+
+<script id="ch0104/13" type="qwe">
+var x=+prompt('')
+if((x>0||x==0)&&x<5){
+    var y=(-x+2.5)
+    console.log(y.toFixed(3))
+}
+else if((x>5||x==5)&&x<7){
+    var y=2-1.5*(x-3)*(x-3)
+    console.log(y.toFixed(3))
+}
+else if((x>10||x==10)&&x<20){
+    var y=x/2-1.5
+    console.log(y.toFixed(3))
+}
+
+</script>
+
+<script id="ch0104/14" type="qwe">
+var x=+prompt('')
+var a=prompt('')
+if(x<1000||x==1000&&a =="n"){
+    console.log(8)
+}
+else if(x<1000||x==1000&&a=="y"){
+    console.log(13)
+}
+else if(x>1000&&a == "n"){
+    var money=Math.ceil((x-1000)/500)*4+8
+    console.log(money)
+}
+else{
+    var money=Math.ceil((x-1000)/500)*4+8+5
+    console.log(money)
+}
+
+</script>
+
+<script id="ch0104/15" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+var z=+prompt('')
+if(x>y&&x>z){
+    console.log(x)
+}
+else if(y>x&&y>z){
+    console.log(y)
+}
+else if(z>y&&z>x){
+    console.log(z)
+}
+
+
+
+</script>
+
+<script id="ch0104/16" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+var ab=a+b
+var ac=a+c
+var bc=b+c
+if(ab>c&&ac>b&&bc>a){
+    console.log("yes")
+}
+else{
+    console.log("no")
+}
+
+
+
+</script>
+
+<script id="ch0104/17" type="qwe">
+var x=+prompt('')
+if(x%400==0||x%4==0&&x%100!=0){
+    console.log("Y")
+}
+else{
+    console.log("N")
+}
+
+
+
+</script>
+
+<script id="ch0104/18" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+if((x>-1||x==-1)&&(x<1||x==1)&&(y>-1||y==-1)&&(y<1||y==1)){
+    console.log("yes")
+}
+else{
+    console.log("no")
+}
+
+</script>
+
+<script id="ch0104/19" type="qwe">
+var x=+prompt('')
+var y=+prompt('')
+var n=prompt('')
+if(n=="+"){
+    var q=x+y
+    console.log(q)
+}
+else if(n =="-"){
+    var q=x-y
+    console.log(q)
+}
+else if(n=="/"){
+    if(y!=0){
+        var q=x/y
+        console.log(q)
+    }
+    else{
+        console.log("Divided by zero!")
+    }
+}
+else if(n=="*"){
+    var q=x*y
+    console.log(q)
+}
+else{
+    console.log("Invalid operator!")
+}
+
+
+
+</script>
+
+<script id="ch0104/20" type="qwe">
+var a=+prompt('')
+var b=+prompt('')
+var c=+prompt('')
+var d=b*b-4*a*c
+if(d>0){
+    var x1=(-b-Math.sqrt(d))/(2*a)
+    var x2=(-b+Math.sqrt(d))/(2*a)
+    console.log(x1.toFixed(5),x2.toFixed(5))
+}
+else if(d==0){
+    var x1=(-b)/(2*a)
+    var x2=(-b)/(2*a)
+    console.log(x1.toFixed(5),x2.toFixed(5))
+}
+
+else{
+    var N=(-b/2/a)
+    var M=Math.sqrt(-d)/2/a
+    console.log(N.toFixed(5)+"-"+M.toFixed(5)+"i",N.toFixed(5)+"+"+M.toFixed(5)+"i")
+}
+
+
+
+</script>
+
+<script id="ch0104/21" type="qwe">
+var n=+prompt('')
+var x=+prompt('')
+var y=+prompt('')
+var z=n-Math.ceil(y/x)
+console.log(z);
+
+</script>
+
+
+
+
+<script id="ch0105/24" type="qwe">
+var a=0,b=0,c=0
+while(c<414){
+    var k=c
+    while(b<333){
+        var j=b
+        while(a<333){
+            var i=a
+            if(i*i+j*j==k*k&&i+k+j==1000&&i<j){
+                console.log(i,j,k)
+            }
+            a++
+        }
+        b++
+    }
+    c++
+
+}
+</script>
+
+for(var c=333;c<414;c++){
+    for(var b=293;b<333;b++){
+        for(var a=293;a<333;a++){
+            if(a*a+b*b==c*c&&a+b+c==1000&&a<b){
+                console.log(a,b,c)
+            }
+        }
+    }
+}
+
+
+for(var i=0;i<=400;i++){
+    dot(i,30,'black')
+}
+
+for(var i=0;i<=400;i=i+2){
+    dot(i,40,'black')
+}
+for(var i=0;i<=400;i=i+4){
+    dot(i,50,'black')
+}
+for(var i=1;i<=400;i=i+4){
+    dot(i,50,'black')
+}
+for(var i=0;i<=400;i=i+5){
+    dot(i,60,'black')
+}
+for(var i=1;i<=400;i=i+5){
+    dot(i,60,'black')
+}
+for(var i=2;i<=400;i=i+5){
+    dot(i,60,'black')
+}
+for(var i=0;i<=400;i=i+1){
+    dot(i,i,'black')
+}
+for(var i=0;i<=400;i=i+1){
+    dot(i,3*i/4,'black')
+}
+for(var i=60;i<=100;i++){
+    dot(i,70,'black')
+}
+for(var i=60;i<=100;i++){
+    dot(i,100,'black')
+}
+for(var i=70;i<=100;i++){
+    dot(60,i,'black')
+}
+for(var i=70;i<=100;i++){
+    dot(100,i,'black')
+}
+for(var j=110;j<=140;j++){
+    for(var i=60;i<=100;i++){
+        dot(i,j,'black')
+    }
+}
+for(var j=150;j<=180;j++){
+    for(var i=60;i<=100;i++){
+        dot(i,j,'rgb((i-60)*255/40,(j-150)*255/30,0)')
+    }
+}
+var x0=100,y0=100,x,y,r=50
+for(i=0;i<=360;i=i+0.001){
+    var rad=i*Math.PI/180
+    x=x0+r*Math.sin(rad)
+    y=y0+r*Math.cos(rad)
+    dot(x,y,'black')
+}
+
+
+var width=function (x) {
+    var count=0
+    var digit
+    while(x>0){
+        digit=x%10
+        x=(x-digit)/10
+        count++
+    }
+    return count             
+}
+var n=prompt('')
+var sum
+var add=''
+var i=0
+while(i<n.length){
+    var m=prompt('')
+    if(m=="a"||m=="b"||m=="c"){
+        sum=2+''
+    }
+    else if(m=="d"||m=="e"||m=="f"){
+        sum=3+''
+    }
+    else if(m=="g"||m=="h"||m=="i"){
+        sum=4+''
+    }
+    else if(m=="j"||m=="k"||m=="l"){
+        sum=5+''
+    }
+    else if(m=="m"||m=="n"||m=="o"){
+        sum=6+''
+    }
+    else if(m=="p"||m=="q"||m=="r"||m=="s"){
+        sum=7+''
+    }
+    else if(m=="t"||m=="u"||m=="v"){
+        sum=8+''
+    }
+    else if(m=="w"||m=="x"||m=="y"||m=="z"){
+        sum=9+''
+    }
+    i++
+    add=add+sum
+}
+
+function factorial(n){
+    if(n==0){
+    return 1;
+}   else{
+    return n*factorial(n-1)
+}
+}
+
+
+function a(n){
+    return n
+}
+
+function s(n){
+    if(n==1){
+        return a(1)
+    }
+    else{
+        return a(n)+s(n-1)
+    }
+}
+
+function f(n){
+    if(n==1||n==2){
+        return 1
+    }
+    else {
+        return f(n-2)+f(n-1)
+    }
+}
+
+//题目：将一个数字的各位加起来求和。如果该和大于10，将得到这个数字继续进行这种操作，直到其只有一位数。
+function f(n){
+    var sum=0
+    var digit
+    while(n>0){
+        digit=n%10
+        sum=sum+digit
+        n=(n-digit)/10
+    }
+    var h=sum
+    if(h<10){
+        return sum
+    }
+    else{
+        return f(h)
+    }
+}
+
+function f(x,y){
+    for(i=1;i<=x;i++){
+        for( j=1;j<=y;j++){
+            var z=i*j
+            return ''+i+"*"+j+"="+z
+        }
+    }
+}
+
+
+function find(x,route){
+    if(x==10){
+        console.log(route)
+    }else if(pos>10)
+    else{
+        find(x+1,route+'1')
+        find(x+2,route+'2')
+    }
+}
