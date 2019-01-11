@@ -29,14 +29,14 @@ var waidwara = {
     var result=[]
     for(var i=0;i<array.length;i++){
       for(var j=0;j<ary.length;j++){
-        if(array[i]==ary[j]){
+        if(array[i]!=ary[j]){
           result.push(array[i])
         }
       }
     }
     return result
   },
-  drop:function(array,size=0){
+  drop:function(array,size=1){
     var result=[]
     for(var i=size;i<array.length;i++){
       result.push(array[i])
