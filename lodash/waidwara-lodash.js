@@ -14,5 +14,26 @@ var waidwara = {
       }
     }
     return result
+  },
+  compact: function(Addary,ary){
+    var result=[]
+    for(var i=0;i<Addary,length;i++){
+      result.push(Addary[i])
+    }
+    for(var i=0;i<ary.length;i++){
+      result.push(ary[i])
+    }
+    return result
+  },
+  difference:function(array,ary){
+    var result=[]
+    for(var i=0;i<array.length;i++){
+      for(var j=0;j<ary.length;j++){
+        if(array[i]==ary[j]){
+          result.push(array[i])
+        }
+      }
+    }
+    return result
   }
 }
