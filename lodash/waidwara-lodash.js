@@ -35,5 +35,19 @@ var waidwara = {
       }
     }
     return result
+  },
+  drop:function(array,size=0){
+    var result=[]
+    for(var i=size;i<array.length;i++){
+      result.push(array[i])
+    }
+    return result 
+  },
+  dropRight:function(array,size=1){
+    var result=[]
+    for(var i=0;i<array.length-size;i++){
+      result.push(array[i])
+    }
+    return result
   }
 }
