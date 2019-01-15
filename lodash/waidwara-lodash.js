@@ -96,14 +96,14 @@ var waidwara = {
   nth:function(array,n=0){
     if(n>=0){
       if(n>array.length-1){
-        return -1
+        return undefined
       }else{
-        return array[i]
+        return array[n]
       }  
     }
     else{
       if(array.length+n<0){
-        return -1
+        return undefined
       }
       else{
         return array[array.length+n]
@@ -124,7 +124,7 @@ var waidwara = {
   },
   reverse:function(array){
     var result=[]
-    for(var i=array.length;i>=0;i--){
+    for(var i=array.length-1;i>=0;i--){
       result.push(array[i])
     }
     return result
@@ -137,7 +137,7 @@ var waidwara = {
     }
   },
   sortedLastIndex:function(array,value){
-    for(var i=array.length;i>=0;i--){
+    for(var i=array.length-1;i>=0;i--){
       if(array[i]==value){
         return i
       }
@@ -168,7 +168,7 @@ var waidwara = {
       return array
     }
     else{
-      for(var i=array.length-1;i>array.length-1-n;i--){
+      for(var i=array.length-1-n;i<array.length;i++){
       result.push(array[i])
     }
     return result
