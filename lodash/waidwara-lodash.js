@@ -136,7 +136,7 @@ var waidwara = {
     else if(array[array.length-1]<value){
       return array.length
     }
-    eles{
+    else{
       for(var i=0;i<array.length;i++){
         if(array[i]<=value&&value<array[i+1]){
           return i+1
