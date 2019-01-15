@@ -129,22 +129,6 @@ var waidwara = {
     }
     return result
   },
-  sortedIndex:function(array,value){
-    if(array[0]>value){
-      return 0
-    }
-    else if(array[array.length-1]<value){
-      return array.length
-    }
-    else{
-      for(var i=0;i<array.length;i++){
-        if(array[i]<=value&&value<array[i+1]){
-          return i+1
-        }
-      }
-    }
-    
-  },
   sortedIndexOf:function(array,value){
     for(var i=0;i<array.length;i++){
       if(array[i]==value){
