@@ -15,7 +15,7 @@ var waidwara = {
     }
     return result
   },
-  comcat: function(Addary,ary){
+  concat: function(Addary,ary){
     var result=[]
     for(var i=0;i<Addary,length;i++){
       result.push(Addary[i])
@@ -137,7 +137,7 @@ var waidwara = {
     }
   },
   sortedLastIndex:function(array,value){
-    for(var i=array.length-1;i>=0;i--){
+    for(var i=array.length;i>=0;i--){
       if(array[i]==value){
         return i
       }
@@ -164,11 +164,11 @@ var waidwara = {
   },
   takeRight:function(array,n=1){
     var result=[]
-    if(array.length-1-n<0){
+    if(array.length-n<=0){
       return array
     }
     else{
-      for(var i=array.length-1-n;i<array.length;i++){
+      for(var i=array.length-n;i<array.length;i++){
       result.push(array[i])
     }
     return result
@@ -229,4 +229,99 @@ var waidwara = {
     }
     return sum
   },
+  flatten:function(ary){
+    var result=[]
+    for(var item of ary){
+      if(Array.isArray(item)){
+        for(var val of item){
+          result.push(val)
+        }
+      }
+      else{
+        result.push(item)
+    }
+  }
+  return result
+},
+  flattenDeep:function(ary){
+    var result=[]
+    for(var item of ary){
+      if(Array.isArray(item)){
+        result.push(...flattenDeep(item))
+      }
+      else{
+        result.push(item)
+      }
+    }
+    return result
+  },
+  flattenDepth:function(ary,depth=1){
+    if(depth==0){
+      return ary.slice()
+    }
+    return ary.reduce((result,item) => {
+      if(Array.isArray(item)){
+        result.push(...flattenDepth(item,depth -1))
+      }
+      else{
+        result.push(item)
+      }
+      return result
+    },[])
+  },
+  every:function(ary,test){
+    for(var i=0;i<ary.length;i++){
+      if(!test(ary[i],i,ary)){
+        return false
+      }
+    }
+    return true
+  },
+  some:function(ary,test){
+    for(var i=0;i<ary.length;i++){
+      if(test(ary[i],i,ary)){
+        return true
+      }
+    }
+    return false
+  },
+  groupBy:function(ary,predicate){
+    var result={}
+    for(var i=0;i<ary.length;i++){
+      var key = predicate(ary[i],i,ary)
+        if(key in result){
+          result[key].push(ary[i])
+        }
+        else{
+          result[key] =[ary[i]] 
+        }
+    }
+    return result
+  },
+  mapValues:function(obj,mapper){
+    var result={}
+    for(var key in obj){
+      var val=obj[key]
+      result[key]=mapper(val)
+    }
+    return result
+  },
+  isArray:function(value){
+    return Object.prototype.toString.call(value)==='[object Array]'
+  },
+  isBoolean:function(value){
+    return Object.prototype.toString.call(value)==='[object Boolean]'
+  },
+  isNumber:function(value){
+    return Object.prototype.toString.call(value)==='[object Number]'
+  },
+  isObject:function(value){
+    return Object.prototype.toString.call(value)==='[object Object]'
+  },
+  isString:function(value){
+    return Object.prototype.toString.call(value)==='[object String]'
+  },
+  isFunction:function(value){
+    return Object.prototype.toString.call(value)==='[object Function]'
+  }
 }
