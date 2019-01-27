@@ -137,9 +137,9 @@ var waidwara = {
     }
   },
   sortedLastIndex:function(array,value){
-    for(var i=array.length;i>=0;i--){
+    for(var i=array.length-1;i>=0;i--){
       if(array[i]==value){
-        return i
+        return i+1
       }
     }
   },
@@ -323,5 +323,13 @@ var waidwara = {
   },
   isFunction:function(value){
     return Object.prototype.toString.call(value)==='[object Function]'
+  },
+  forOwn:function(obj,action){
+    var hasOwn = Object.prototype.hasOwnProperty
+    for(var prop in a){
+      if(hasOwn.call(a,prop)){
+        action(a[prop] , prop , a)
+      }
+    }
   }
 }
