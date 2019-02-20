@@ -331,5 +331,87 @@ var waidwara = {
         action(a[prop] , prop , a)
       }
     }
-  }
+  },
+  // 返回一个以proto为原型得对象
+  create:function(proto){
+    function Object(){}
+    Object.prototype = proto
+    return new Object()
+  },
+  assign:function(target,...sources){
+    for(var source of sources){
+      for(var key in source){
+        if(source.hasOwnProtoperty(key)){
+          target[key] = source[key]
+        }
+      }
+    }
+    return target
+  },
+  merge:function(obj1,obj2){
+
+  },
+  replace:function(str, re,f){
+    var result = ''
+    var lastIndex = 0
+    re = new RegExp(re.source,re.flags + 'g')
+    var match 
+    while(match = re.exec(str)){
+      result +=str.slice(lastIndex,match.index)
+      result +=f(...match)
+      lastIndex = re.lastIndex
+      }
+      result +=str.slice(lastIndex)
+      return result
+    },
+  isMatch:function(str,w){
+    w = w.replace(/(?=[^\w])(?![?*])/g,'\\')
+          .replace(/?/g,'.')
+          .replace(/\*/g,'.*')   
+    var re = new RegExp('^' + w + '$')
+    return re.test(str)
+  },
+  test:function(re,str){
+    if(re.exec(str)){
+      return true
+    }
+    else{
+      return false
+    }
+  },
+  search:function(str,re){
+    var match = re.exec(str)
+    if(match){
+      return match.index
+    }
+    else{
+      return -1
+    }
+  },
+  match:function(str,re){
+    if(re.global){
+      let result=[]  
+      let m
+        while(m = re.exec(str)){
+          result.push(m[0])
+        }
+    }
+    else{
+      return re.exec(str)
+    }
+  },
+  split:function(str,re){
+    var result =[]
+    var lastIndex=0
+    re = new RegExp(re.source,re.flags + 'g')
+    var match
+    while(match =re.exec(str)){
+      result.push(str.slice(lastIndex,match.index))
+      result.push(...match.slice(1))
+      lastIndex = re.lastIndex
+    }
+    result.push(str.slice(lastIndex))
+    return result
+  },
+  
 }
